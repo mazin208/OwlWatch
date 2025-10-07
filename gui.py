@@ -51,7 +51,7 @@ class VideoTrackerApp:
         note_win.geometry("600x450")
         note_win.configure(bg="#1e1e1e")
 
-        # ✅ محرر النص (مع دعم الاختصارات)
+        
         text = scrolledtext.ScrolledText(
             note_win, 
             wrap=tk.WORD, 
@@ -62,10 +62,10 @@ class VideoTrackerApp:
         text.insert("1.0", self.data.get(video_name, {}).get("notes", ""))
         text.pack(expand=True, fill="both", padx=10, pady=10)
 
-        # ✅ دوال الاختصارات
+        
         def select_all(event):
             text.tag_add("sel", "1.0", "end")
-            return "break"  # منع سلوك الافتراضي
+            return "break"  
 
         def copy_text(event):
             text.event_generate("<<Copy>>")
@@ -83,25 +83,25 @@ class VideoTrackerApp:
             text.event_generate("<<Redo>>")
             return "break"
 
-        # ✅ ربط الاختصارات
+        
         text.bind("<Control-a>", select_all)
         text.bind("<Control-c>", copy_text)
         text.bind("<Control-v>", paste_text)
         text.bind("<Control-z>", undo_text)
         text.bind("<Control-y>", redo_text)
 
-        # ✅ دالة للحفظ
+        
         def save_only():
             self.data[video_name]["notes"] = text.get("1.0", "end-1c").strip()
             self.save_data()
             print("Notes saved!")
 
-        # ✅ دالة للحفظ والإغلاق
+        
         def save_and_close():
             save_only()
             note_win.destroy()
 
-        # ✅ زر Save & Close
+        
         btn = ttk.Button(
             note_win,
             text="Save & Close",
@@ -111,7 +111,7 @@ class VideoTrackerApp:
         )
         btn.pack(pady=5)
 
-        # ✅ ربط Ctrl + S
+        
         note_win.bind("<Control-s>", lambda e: save_only())
         note_win.bind("<Escape>", lambda e: note_win.destroy())
 
@@ -121,14 +121,14 @@ class VideoTrackerApp:
         root.geometry("740x650")
         root.configure(bg="#1e1e1e")
 
-        # ✅ إضافة دعم للأنماط
+    
         style = ttk.Style()
         try:
             style.theme_use("clam")
         except:
             style.theme_use("default")
 
-        # ✅ تعديل الألوان
+    
         dark_bg = "#1e1e1e"
         dark_fg = "#ffffff"
         btn_bg = "#2d2d2d"
@@ -218,7 +218,7 @@ class VideoTrackerApp:
                     self.data[vid]["status"] = new_val
                     lbl.config(text=self.status_labels.get(new_val, new_val))
                     
-                    # ✅ تغيير لون الخلفية حسب الحالة
+                    
                     if new_val == "completed":
                         combo.configure(background="#4CAF50")
                     elif new_val == "in_progress":
