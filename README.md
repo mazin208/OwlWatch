@@ -53,18 +53,6 @@ cp . ~/.config/caja/scripts/
 
 ---
 
-## 🛠️ Customization
-
-You can easily customize:
-- Colors (dark/light themes)
-- Keyboard shortcuts
-- Status icons
-- Note editor size
-
-Just edit `tracker.py` — it’s clean, well-commented, and beginner-friendly.
-
----
-
 ## 🧩 How It Works
 
 When you run OwlWatch from a folder:
