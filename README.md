@@ -40,7 +40,7 @@ cd owlwatch
 
 ### 2. Make the script executable:
 ```bash
-chmod +x tracker.py
+chmod +x owlwatch
 ```
 
 ### 3. Install to Caja (Parrot OS):
