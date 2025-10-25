@@ -46,7 +46,7 @@ chmod +x owlwatch
 ### 3. Install to Caja (Parrot OS):
 
 ```bash
-cp . ~/.config/caja/scripts/
+cp -r . ~/.config/caja/scripts/
 ```
 
 > ✅ Now, right-click any folder → **Scripts → OwlWatch** to launch!
